@@ -1,0 +1,383 @@
+program 1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace Assignment3
+{
+    internal class Program
+    {
+        private String My_name;
+        public void setvalue(String name1)
+        {
+            My_name = name1;
+        }
+        public string getvalue()
+        {
+            return My_name;
+        }
+        static void Main(string[] args)
+        {
+            /*Program p1 = new Program();
+               p1.setvalue("Amit");
+               String name=p1.getvalue();
+               Console.WriteLine(name);
+               Console.ReadLine();*/
+
+            /* program2 p2 = new program2(22);
+             int value = p2.GetPrivateFieldA();
+             Console.WriteLine(value);
+             Console.ReadLine();*/
+
+            //Child.Main(new String[] { });
+
+            /*program4 p4 = new program4("AP Singh");
+             p4.Getnames();
+            Console.ReadLine();*/
+
+            /*Dev d1 = new Dev();
+            Console.WriteLine(d1.city);
+            d1.print2();
+            d1.GetUserInfo();
+            Console.ReadLine();*/
+
+            Child2.Main(new String[]{});
+
+            //program7.Main(new String[] { });
+
+            // program8 c8 = new program8("BHarat",987456);
+            // c8.Getinfo2();
+
+            //Dev1 d1 = new Dev1();
+            //d1.Print3();
+
+           // program10 c = new program10(10);
+            //c.print();
+        }
+
+        internal class Dev : program5
+        {
+            public Dev() : base("Mohit", "Sirsaganj") { }
+            internal void print2()
+            {
+                Console.WriteLine($"the Derived user name is {name} and city is {city} and is age  {age} and ac num is {account}");
+            }
+        }
+
+    }
+}
+
+program 2
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program2
+    {
+        private int privateFieldA;
+        public program2(int value) 
+        { 
+            this.privateFieldA = value;
+        }
+        public int GetPrivateFieldA() 
+        {
+            return privateFieldA;
+        }
+    }
+}
+
+program 3
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program3
+    {
+        protected String Name;
+        protected int Sellery;
+
+        protected program3(String Name, int Sellery)
+        {
+            this.Sellery = Sellery;
+            this.Name = Name;
+
+        }
+
+        protected void Print()
+        {
+            Console.WriteLine($"The employee name is {Name} and sellery of the emp is {Sellery}");
+        }
+    }
+    internal class Child : program3
+    {
+        public String City;
+
+        protected Child(string City) : base("amit",250000)
+        {
+
+            this.City = City;
+        }
+
+        public static void Main(String[] args)
+        {
+            Child c1 = new Child("Agra");
+            Console.WriteLine(c1.City);
+
+            c1.Print();
+            Console.ReadLine();
+        }
+
+
+
+    }
+}
+
+program 4
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program4
+    {
+        internal String name;
+
+        internal program4(String name)
+        {
+            this.name = name;
+
+        }
+        internal void Getnames()
+        {
+            Console.WriteLine(name);
+        }
+
+        static void Main(String[] args)
+        {
+
+        }
+    }
+}
+
+program 5
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program5
+    {
+        protected internal String name;
+        protected internal String city;
+        protected int age = 22;
+        protected int account = 987456;
+
+        protected program5(String name, String city)
+        {
+            this.name = name;
+            this.city = city;
+        }
+        protected internal void GetUserInfo()
+        {
+            Console.WriteLine($"Student name is{name} and city is {city}");
+
+        }
+    }
+}
+
+program 6
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program6
+    {
+        public int age;
+        public String name;
+        public program6(int age, String name)
+        {
+            this.age = age;
+            this.name = name;
+        }
+        public void getempinfo()
+        {
+            Console.WriteLine($"the employee name is {name} and age is {age}");
+        }
+    }
+
+    internal class Child2 : program6
+    {
+        public static void Main(string[] args)
+        {
+            Child2 c2 = new Child2();
+            c2.getempinfo();
+        }
+        public Child2() : base(34, "prakash")
+        { 
+            Console.ReadLine();
+        }
+
+
+    }
+}
+
+program 7
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program7
+    {
+        private int sellery;
+        private int ac_num;
+
+        private program7(int sellery, int ac_num)
+        {
+            this.sellery = sellery;
+            this.ac_num = ac_num;
+        }
+
+        public void Setvalue(int sellery, int ac_num)
+        {
+            this.sellery = sellery;
+            this.ac_num = ac_num;
+        }
+        public void Getvalue()
+        {
+
+            Console.WriteLine($" Sellery is {sellery} and account number is {ac_num}");
+
+        }
+        internal static void Main(string[] args)
+        {
+
+            program7 c7 = new program7(1200, 12345);
+            c7.Getvalue();
+            c7.Setvalue(1000, 55555);
+            c7.Getvalue();
+            Console.ReadLine(); 
+        }
+
+    }
+}
+
+program8
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program8
+    {
+        public String country;
+        private int mobile;
+        public program8(String country, int mobile)
+        {
+            this.country = country;
+            this.mobile = mobile;
+        }
+        private void Getinfo()
+        {
+            Console.WriteLine($"The agent country name is {country} and mobile number is {mobile}");
+        }
+
+        public void Getinfo2()
+        {
+            Getinfo();
+        }
+
+    }
+}
+
+program 9
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program9
+    {
+        protected int age;
+        public String name;
+        public program9(int age, String name)
+        {
+            this.age = age;
+            this.name = name;
+        }
+        protected void getempinfo()
+        {
+            Console.WriteLine($"the employee name is {name} and age is {age}");
+        }
+    }
+    internal class Dev1 : program9
+    {
+        internal Dev1() : base(24, "amit")
+        { }
+        public void Print3()
+        {
+            Console.WriteLine("it is print method of Dev class");
+            getempinfo();
+        }
+
+    }
+}
+
+program 10
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    internal class program10
+    {
+        protected int x;
+        public program10(int x)
+        {
+            this.x = x;
+
+        }
+        public void print()
+        {
+            Console.WriteLine(x);
+        }
+    }
+}
